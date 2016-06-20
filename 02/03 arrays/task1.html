@@ -15,13 +15,6 @@ var max = m[0];
 var sum = 0;
 var middle=0;
 var sum2=0;
-for (var i=0;i<m.length;i++){
-
-if (m[i]<min){
-	min = m[i];
-}
-};
-document.write(min+"<br>");
 
 for (var j=0;j<m.length;j++){
 
@@ -31,6 +24,13 @@ if (m[j]>max){
 };
 document.write(max+ "<br>");
 
+for (var i=0;i<m.length;i++){
+
+if (m[i]<min){
+	min = m[i];
+}
+};
+document.write(min+"<br>");
 
 for (var z=0;z<m.length;z++){
 
