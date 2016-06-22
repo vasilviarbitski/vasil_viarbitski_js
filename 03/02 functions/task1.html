@@ -1,8 +1,55 @@
-Functions
+<!--Functions
+1. Write a function that returns the last digit of given integer as an English word. Examples: 512 -> "two", 1024 -> "four", 12309 -> "nine"-->
 
-1. Write a function that returns the last digit of given integer as an English word. Examples: 512 -> "two", 1024 -> "four", 12309 -> "nine"
-2. Write a function that reverses the digits of given decimal number. Example: 256 -> 652
-3. Write a function that finds all the occurrences of word in a text
-    * The search can case sensitive or case insensitive
-    * Use function overloading
-4. Write a function to count the number of divs on the web page
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	
+var lastDigit = function (number){
+this.number = number;
+var toString = String(this.number);
+var last = toString[toString.length-1];
+
+switch (last) {
+	case '0' : 
+	document.write('zero');
+	break;
+	case '1' : 
+	document.write('one');
+	break;
+	case '2' : 
+	document.write('two');
+	break;
+	case '3' : 
+	document.write('three');
+	break;
+	case '4' : 
+	document.write('four');
+	break;
+	case '5' : 
+	document.write('five');
+	break;
+	case '6' : 
+	document.write('six');
+	break;
+	case '7' : 
+	document.write('seven');
+	break;
+	case '8' : 
+	document.write('eight');
+	break;
+	case '9' : 
+	document.write('nine');
+	break;
+}
+};
+
+lastDigit(12309);
+
+</script>
+</body>
+</html>
