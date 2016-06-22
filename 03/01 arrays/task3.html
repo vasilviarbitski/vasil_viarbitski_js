@@ -1,0 +1,41 @@
+<!--Arrays
+3. Write a script that finds the maximal sequence of equal elements in an array.
+
+    **Example:** [2, 1, 1, 2, 3, 3, 2, 2, 2, 1] -> [2, 2, 2].-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+var numArr = [2, 1, 1, 2, 3, 3, 2, 2, 2, 1];
+var tmpArr = [];
+var resArr = [];
+
+tmpArr[0]=numArr[0];
+
+for (var i=1;i<=numArr.length;i++){
+	if (numArr[i]==numArr[i-1]){
+		tmpArr.push(numArr[i]);
+	}
+	else {
+		if (tmpArr.length>resArr.length){
+			resArr=tmpArr;
+		}
+		tmpArr=[numArr[i]];
+	};
+};
+if (tmpArr.length>resArr.length){
+	document.write(tmpArr);
+}
+else {
+	document.write(resArr);
+};
+
+</script>
+</body>
+</html>
