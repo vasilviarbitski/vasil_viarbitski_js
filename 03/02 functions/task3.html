@@ -11,35 +11,25 @@
 <body>
 <script type="text/javascript">
 	
-
 var mainText = 'two one two one one one two two two three three one one two five one two';
 var myText = 'two';
 var count = 0;
 
+function countInString(searchFor,searchIn){
 
-var findText = function(){
-count = mainText.indexOf(myText,count);
-if (count>0) {
-document.write(count+'<br>');
-}
-count = count+myText.length;
+ var results=0;
+ var a=searchIn.indexOf(searchFor);
+
+ while(a!=-1){
+   searchIn=searchIn.slice(a*1+searchFor.length);
+   results++;
+   a=searchIn.indexOf(searchFor);
+ };
+document.write(results);
 };
 
-
-
-var all = function (myText,mainText){
-	for (i=0;i<10;i++){
-		findText();
-	}
-}
-
-
-all (myText,mainText);
-
-
-
+countInString(myText,mainText);
 
 </script>
-
 </body>
 </html>
