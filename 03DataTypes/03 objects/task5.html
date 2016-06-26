@@ -15,7 +15,37 @@
 <script type="text/javascript">
 
 
+var persons =[
+        { firstName: 'Gosho', lastName: 'Petrov', age: 19, groupName: 'A'}
+      , { firstName: 'Gosho', lastName: 'Ivan', age: 26, groupName: 'B' }
+      , { firstName: 'Gosho', lastName: 'Ivan', age: 10, groupName: 'A' }
+      , { firstName: 'Gosho', lastName: 'Ivan', age: 21, groupName: 'A' }
+      , { firstName: 'Gosho', lastName: 'Ivan', age: 14, groupName: 'B' }
+      , { firstName: 'Bay', lastName: 'Ivan', age: 23, groupName: 'A' }
+      , { firstName: 'Bay', lastName: 'Ivan', age: 90, groupName: 'B' }
+    ];
 
+    function group(persons, prop) {
+        var result = {}
+        persons.forEach(function(person) {
+            this.person = person;
+            var value = this.person[this.prop]
+            result[value] = result[value] || []
+            result[value].push(person)
+            document.write(result[value]);
+        })
+        document.write(result);
+    };
+
+group(persons, 'age');
+
+
+
+//[
+//  {"group1" : [person1, person2, ...]},
+//  {"group2" : [personN, persoN+1, ...]},
+//
+//]
 </script>
 </body>
 </html>
