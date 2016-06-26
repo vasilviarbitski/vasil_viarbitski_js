@@ -1,0 +1,63 @@
+<!--
+Task 1
+Требуется: Создать массив размерностью N элементов, заполнить его произвольными целыми значениями. Вывести наибольшее значение массива, наименьшее значение массива, общую сумму элементов, среднее арифметическое всех элементов, вывести все нечетные значения.-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	
+var m = [6, 5, 7, 14, 68, 19, 48, 2];
+var min = m[0];
+var max = m[0];
+var sum = 0;
+var middle=0;
+var sum2=0;
+
+for (var j=0;j<m.length;j++){
+
+if (m[j]>max){
+	max = m[j];
+}
+};
+document.write(max+ "<br>");
+
+for (var i=0;i<m.length;i++){
+
+if (m[i]<min){
+	min = m[i];
+}
+};
+document.write(min+"<br>");
+
+for (var z=0;z<m.length;z++){
+
+	sum+=m[z];
+};
+document.write(sum+"<br>");
+
+for (var y=0;y<m.length;y++){
+	sum2+=m[y];
+	middle++;
+}
+middle=sum/middle;
+document.write(middle+"<br>");
+
+for (var q=0;q<m.length;q++){
+
+	if (m[q]%2 !==0){
+
+		document.write(m[q]+" ");
+	}
+}
+</script>
+</body>
+</html>
+
+
+
+
+
+
