@@ -17,11 +17,20 @@
 </head>
 <body>
 <script type="text/javascript">
-    
 
+var txt = `http://www.tut.by/forum/index.php`;
 
+var reg = new RegExp("(.+)://(.+?)(/.*)");    
+var parse = txt.match(reg);
 
+var ret = {
+	protocol : parse[1],
+	server : parse[2],
+	resource : parse[3]
+};
 
+var str = JSON.stringify(ret);
+document.write(str);
     
 </script>
 </body>
