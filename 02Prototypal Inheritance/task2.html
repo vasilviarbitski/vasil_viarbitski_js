@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<body>
+  <script type="text/javascript">
+
+  var domElement = {
+
+    init : function (type) {
+      this.type = type;
+      this.children = [];
+      this.attributes = [];
+      return this;
+    },
+
+    appendChild : function (child) {
+      this.children.push(child);
+      if (typeof child === 'object') {
+        child.parent = this;
+      }
+      return this;
+    },
+
+    addAttribute : function (name, value) {
+      if (!/^[A-z0-9-]+$/.test(name)) {
+        console.log('Error in name');
+      };
+      this.attributes[name] = value;
+      return this;
+    },
+    removeAttribute : function (attribute) {
+      delete this.attributes[attribute];
+      return this;
+    },
+    get innerHTML() {
+      var result = ''+'<' + this.type + insertAttributes(this.attributes) + '>';
+      for (var i = 0; i < this.children.length; i++) {
+        if (typeof this.children[i] === 'string' && typeof this.children[i] != undefined) {
+          result += this.children[i];
+        } else {
+          result += this.children[i].innerHTML;
+        }
+      };
+      result += this.content;
+      result += '</' + this.type + '>';
+      return result;
+    }
+  };
+
+  Object.defineProperty(domElement, 'type', {
+    get: function() {
+      return this._type;
+    },
+    set: function(value) {
+      if (!/^[A-z0-9]+$/.test(value) || typeof value !== 'string') {
+        console.log('Only Latin letters and digits');
+      }
+      this._type = value;
+    }
+  });
+  function insertAttributes(obj) {
+    var attributes = '';
+    var keys = Object.keys(obj);
+    keys.sort();
+    for (var j = 0; j < keys.length; j++) {
+      attributes += (' ' + keys[j] + '="' + obj[keys[j]] + '"');
+    };
+    return attributes;
+  }
+
+  Object.defineProperty(domElement, 'content', {
+    get: function() {
+      if (this.children.length == 0 && this._content != undefined) {
+        return this._content;
+      }
+      else {
+          return '';
+      }
+    },
+    set: function(value) {
+      this._content = value;
+    }
+  });
+
+  Object.defineProperty(domElement, 'attributes', {
+    get: function() {
+      return this._attributes;
+    },
+    set: function(value) {
+      this._attributes = value;
+    }
+  });
+
+  Object.defineProperty(domElement, 'children', {
+    get: function() {
+      return this._children;
+    },
+    set: function(value) {
+      if (value == undefined){
+        this.children == '';
+      }
+      this._children = value;
+    }
+  });
+
+  Object.defineProperty(domElement, 'parent', {
+    get: function() {
+      return this._parent;
+    },
+    set: function(value) {
+      this._parent = value;
+    }
+  });
+
+
+  var meta = Object.create(domElement)
+  .init('meta')
+  .addAttribute('charset', 'utf-8');
+
+  var head = Object.create(domElement)
+  .init('head')
+  .appendChild(meta);
+
+  var div = Object.create(domElement)
+  .init('div')
+  .addAttribute('style', 'font-size: 42px');
+
+  div.content = 'Hello, world!';
+
+
+  var body = Object.create(domElement)
+  .init('body')
+  .appendChild(div)
+  .addAttribute('id', 'myid')
+  .addAttribute('bgcolor', '#012345');
+
+  var root = Object.create(domElement)
+  .init('html')
+  .appendChild(head)
+  .appendChild(body);
+
+  console.log(root.innerHTML);
+
+  </script>
+</body>
+</html>
