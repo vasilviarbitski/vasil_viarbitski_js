@@ -1,0 +1,26 @@
+<!--Strings
+5. Write a function that replaces non breaking white-spaces in a text with `&nbsp;`
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<script type="text/javascript">
+    
+var text = 'this is just a simple sample text';
+document.write(text+'<br>');
+
+function replaceSpace(text) {
+        this.text = text;
+        return (this.text).replace(/ /g, '&nbsp;');
+    };
+
+
+    document.write(replaceSpace(text));
+
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!--Strings
+2. Write a JavaScript function to check if in a given expression the brackets are put correctly.
+    * Example of correct expression: `((a+b)/5-d)`.
+    * Example of incorrect expression: `)(a+b))`.
+    -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<script type="text/javascript">
+  
+  function checkBrackets(str){
+    
+    var depth = 0;
+    for(var i=0;i<str.length;i++){   
+        if(str[i] == '('){
+            depth ++;
+        }
+        else if(str[i] == ')'){
+            depth --;
+        };
+		};
+
+    if (depth < 0){
+    	document.write('Incorrect'+'<br>');
+    }
+    else if(depth > 0){
+    	document.write('Incorrect'+'<br>');
+    } 
+    else {
+    	document.write('Correct'+'<br>');
+    };
+}
+checkBrackets('( ( a + b ) / 5 – d )');
+checkBrackets(')(a+b))');
+    
+</script>
+</body>
+</html>    

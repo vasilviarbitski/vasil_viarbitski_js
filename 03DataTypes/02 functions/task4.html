@@ -1,0 +1,31 @@
+<!--Functions
+4. Write a function to count the number of divs on the web page-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<div>1</div>
+<div>1</div>
+<div>1</div>
+<div>1
+	<div>1</div>
+	<div>1</div>
+</div>
+
+<script type="text/javascript">
+	
+	var divCount = function () {
+
+		document.write(document.getElementsByTagName("div").length);
+		
+	};
+
+divCount();
+
+</script>
+
+</body>
+</html>

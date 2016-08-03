@@ -1,0 +1,39 @@
+<!--Strings
+6. Write a function that extracts the content of a html page given as text. The function should return anything that is in a tag, without the tags:
+
+    ```html
+    <html>
+        <head>
+            <title>Sample site</title>
+        </head>
+        <body>
+            <div>text<div>more text</div>and more...</div>in body
+        </body>
+    </html>
+    ```
+
+    Result: `Sample sitetextmore textand more...in body`
+    -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<script type="text/javascript">
+
+
+var text = '<html><head><title>Sample site</title></head><body><div>text<div>more text</div>and more...</div>in body</body></html>';
+document.write(text+'<br>');
+
+function replaceTag(text) {
+        this.text = text;
+        return (this.text).replace(/<(.*?)>/g, ' ');
+    };
+
+
+    document.write(replaceTag(text));
+    
+</script>
+</body>
+</html>    
