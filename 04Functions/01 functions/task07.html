@@ -1,0 +1,23 @@
+<!--Task 7. Optional Arguments Create function find(testString, test) which should return the position of test string in testString. If you don’t pass the second parameter use test = testString. Use Function Definition Expression. Test Data: testString = “abc”, test =”b”, result = 1 testString = “abc”, result = 0 testString = ”abc”, test = “d”, result = -1 testString = “abc”, test=”a”, test2=”b”, result = 0  -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	var find = function (testString, test){
+		if (test == undefined){
+			test = testString;
+		};
+		var pos = testString.search(test);
+
+		document.write(''+pos);
+	};
+
+	var testString = 'abc';
+	var test = 'b';
+	find(testString, test);
+</script>
+</body>
+</html>
