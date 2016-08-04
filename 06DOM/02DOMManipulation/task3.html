@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <textarea id='text'></textarea>
+    <input type='color' id='textColor'>
+    <input type='color' id='backgroundColor'>
+    <script type="text/javascript">
+    	(function() {
+        var textArea = document.getElementById('text');
+    		var textColor = document.getElementById('textColor');
+    		var textBackgroundColor = document.getElementById('backgroundColor');
+
+    		textColor.addEventListener("input", function() {
+    			textArea.style.color = this.value;
+    		});
+    		textBackgroundColor.addEventListener("input", function(){
+    			textArea.style.backgroundColor = this.value;
+    		});
+    	})();
+    </script>
+  </body>
+</html>
