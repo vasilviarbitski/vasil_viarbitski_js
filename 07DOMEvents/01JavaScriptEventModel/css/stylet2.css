@@ -1,0 +1,12 @@
+button {
+  width: 90px;
+}
+.unHide, .hide {
+  display: none;
+}
+.remove {
+  width: 20px;
+  background-color: red;
+  border-color: white;
+  border-radius: 10px;
+}
