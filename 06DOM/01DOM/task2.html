@@ -1,0 +1,17 @@
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <input type="text" name="name" value="Some text">
+    <button type="button" name="button" onclick="getValue()">Read to console</button>
+    <script type="text/javascript">
+    function getValue() {
+      var gV = document.querySelector('[type="text"]').value;
+      console.log(gV);
+    };
+    </script>
+  </body>
+  </html>

@@ -1,0 +1,51 @@
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="utf-8">
+      <title></title>
+    </head>
+    <body>
+      <div id="wrapper">
+              <h1>Random div creator!</h1>
+              <input type="text" id="value">
+              <button id="create" onclick="createDiv()">Create</button>
+              <div id="div"></div>
+      </div>
+      <script type="text/javascript">
+
+      function createDiv() {
+        var rWh,rBg,rC,rP,rBr,rBc,rBw,rBorder;
+        var targetDiv = document.getElementById('div');
+        var number = parseInt(document.getElementById('value').value);
+
+        for (var i=0; i<number;i++){
+          rWh = ''+getRandomInt(20, 100)+ 'px';
+          rBg = randomColor();
+          rC = randomColor();
+          rP = getRandomInt(1,100)+'px';
+          rBr = getRandomInt(0,50)+'px';
+          rBc = randomColor();
+          rBw = getRandomInt(1,20);
+          rBorder = ''+rBw+'px solid '+rBc;
+          var createdDiv = document.createElement('div');
+          createdDiv.style.width = rWh;
+          createdDiv.style.height = rWh;
+          createdDiv.style.backgroundColor = rBg;
+          createdDiv.style.color = rC;
+          createdDiv.style.margin = rP;
+          createdDiv.style.border = rBorder;
+          createdDiv.style.borderRadius = rBr;
+          createdDiv.innerHTML = '<strong>div</strong>'
+          targetDiv.appendChild(createdDiv);
+        };
+        function getRandomInt(min, max) {
+          return Math.floor(Math.random()*(max-min+1)+min);
+        };
+        function randomColor() {
+          return 'rgb('+getRandomInt(1,255)+','+getRandomInt(1,255)+','+getRandomInt(1,255)+')';
+        }
+      }
+
+      </script>
+    </body>
+  </html>

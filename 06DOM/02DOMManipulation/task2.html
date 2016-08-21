@@ -1,0 +1,63 @@
+  <html>
+  <head>
+  	<title></title>
+    </head>
+  <body>
+  <button onclick="addMove()">Add and move 5 divs</button>
+  <div id='div'></div>
+  <script type="text/javascript">
+      var x = 170;
+      var y = 140;
+      var r = 120;
+
+      function addMove() {
+      addDivs();
+      setInterval(function() {
+      moveDivs();
+         }, 100);
+
+      }
+      function moveDivs() {
+         var elements = document.getElementsByClassName('move');
+         var degree = 0;
+         var onX = 0;
+         var onY = 0;
+         for (var i = 0; i < elements.length; i++) {
+          degree = parseFloat(elements[i].getAttribute('degree'));
+          degree = (degree + 1) % 360;
+          onX = x + Math.cos(degree + 2 * Math.PI / elements.length * i) / r * 10000 + 'px';
+          elements[i].style.top = onX;
+          onY = y + Math.sin(degree + 2 * Math.PI / elements.length * i) / r * 10000 + 'px';
+          elements[i].style.left = onY;
+          elements[i].setAttribute('degree', degree);
+         };
+      };
+      function addDivs() {
+        var currentX = x;
+        var currentY = y;
+        var d = 0;
+        for (var i = 0; i < 5; i++) {
+            var newDiv = document.createElement('div');
+            newDiv.setAttribute('class', 'move');
+            newDiv.style.height = '100px';
+            newDiv.style.width = '100px';
+            newDiv.style.position = 'absolute';
+            newDiv.style.backgroundColor = 'green';
+            newDiv.style.borderRadius = '100px';
+            currentX = x + Math.cos(d + 2 * Math.PI / 5 * i) / r * 10000 + 'px';
+            newDiv.style.top = currentX;
+            currentY = y + Math.sin(d + 2 * Math.PI / 5 * i) / r * 10000 + 'px';
+            newDiv.style.left = currentY;
+            newDiv.setAttribute('degree', d);
+            document.getElementById('div').appendChild(newDiv);
+        };
+      };
+      function randomColor() {
+        return 'rgb('+getRandomInt(1,255)+','+getRandomInt(1,255)+','+getRandomInt(1,255)+')';
+      }
+      function getRandomInt(min, max) {
+        return Math.floor(Math.random()*(max-min+1)+min);
+      };
+  </script>
+  </body>
+  </html>
