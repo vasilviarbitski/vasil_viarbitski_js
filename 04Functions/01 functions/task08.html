@@ -1,0 +1,45 @@
+<!--Task 8. Function as an Object
+ Create the function str which takes one parameter and alert(“String is non empty”) if string is non empty and alert(String is empty) otherwise. Use following funtion to check this condition. Create the function isNonEpmtyStr as a property of function str. This function takes one parameter and return true if its parameter is NonEmptyStr. Test Data: str.isNonEmptyStr(), result = false str.isNonEmptyStr(“”), result = false str.isNonEmptyStr(“a”), result = true str.isNonEmptyStr(1), result = false str(), alert(“String is empty”) str(“a”), alert(“String is non empty”) -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	
+function str (oneParameter){
+if (oneParameter !==undefined){
+	if (typeof oneParameter === 'string'){
+	document.write('String is non empty'+'<br>');
+}
+else {
+	document.write('It\'s not a string'+'<br>');
+}
+}
+else {
+	document.write('String is empty'+'<br>');
+};
+str.isNonEmptyStr = function (oneParameter){
+	if (oneParameter === undefined || typeof oneParameter !== 'string') {
+		document.write('false'+'<br>');
+	}
+	else if (oneParameter.length ==0){
+		document.write('false'+'<br>');
+	}
+	else {
+		document.write('true'+'<br>');
+	}
+}
+}
+
+str();
+str('a');
+str.isNonEmptyStr();	
+str.isNonEmptyStr('');	
+str.isNonEmptyStr('a');	
+str.isNonEmptyStr(1);	
+
+</script>
+</body>
+</html>

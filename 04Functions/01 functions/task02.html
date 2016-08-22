@@ -1,0 +1,28 @@
+<!--Task 2. FDE Create function comp which should compare two parameters a and b and return 1 if a equal b and -1 if a not equal b using Function Definition Expression (FDE). Call this function before its declaration. Test Data: a = “abc”, b = “abc”, result = 1 a = “abC”, b = “abc”, result = -1  -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+
+var comp = function (a,b){
+if (a==b){
+	return 1;
+}
+else {
+	return -1;
+}
+};
+
+var a = 'abc';
+var b = 'abc';
+document.write(comp(a,b)+'<br>');
+var a = 'abC';
+var b = 'abc';
+document.write(comp(a,b));
+
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!--Functions
+2. Write a function that reverses the digits of given decimal number. Example: 256 -> 652-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	
+var reverse = function (number) {
+this.number = number;
+var temp = (this.number).toString();
+var result = temp.split('').reverse().join('');
+document.write(result);
+};
+
+reverse(256);
+
+</script>
+</body>
+</html>
