@@ -1,0 +1,12 @@
+.container {
+  width: 606px;
+  height: 206px;
+  display: flex;
+  border: 1px solid black;
+}
+.first, .second, .third, .forth {
+  margin: 2px;
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+}
