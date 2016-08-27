@@ -1,0 +1,31 @@
+#comp {
+  margin: 5px;
+  height: 20px;
+  width: 150px;
+  opacity: 0.1;
+}
+#player {
+  margin: 5px;
+  height: 20px;
+  width: 150px;
+}
+#result {
+  margin: 5px;
+  height: 20px;
+  width: 150px;
+}
+#try {
+  margin: 5px;
+  height: 20px;
+  width: 150px;
+}
+#list {
+  width: 150px;
+}
+table {
+  border: 1px solid black;
+}
+
+td, th {
+  border-bottom: 1px solid black;
+}
